@@ -1,6 +1,5 @@
-Sierotki.js
-Sierotki.js.map
-
+.travis.yml
+node_modules
 
 # Logs
 logs

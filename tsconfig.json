@@ -1,0 +1,15 @@
+{
+    "compileOnSave":true,
+    "compilerOptions": {
+        "module": "none",
+        "noImplicitAny": true,
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "outFile": "Sierotki.js",
+        "sourceMap": true,
+        "target": "es6"
+    },
+    "files": [
+        "typings/Sierotki.ts"
+    ]
+}
