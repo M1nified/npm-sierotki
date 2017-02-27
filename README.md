@@ -2,13 +2,19 @@
 
 [![Build Status](https://travis-ci.org/M1nified/Sierotki.js.svg?branch=master)](https://travis-ci.org/M1nified/Sierotki.js)
 
+## Installation
+
 ```shell
-npm install sierotki.js
+npm install sierotki
 ```
+
+## NodeJS
 
 ```javascript
 var Sierotki = require('sierotki').Sierotki; // class Sierotki
 ```
+
+## Browser
 
 ```html
 <script type="text/javascript" src="/node_modules/index.js"></script>
