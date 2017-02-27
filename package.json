@@ -2,12 +2,12 @@
   "name": "sierotki.js",
   "version": "1.0.1",
   "description": "Removes single/double characters at the end of line.",
-  "main": "Sierotki.js",
+  "main": "index.js",
   "directories": {
     "test": "tests"
   },
   "scripts": {
-    "test": "node ./node_modules/mocha/bin/mocha"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
