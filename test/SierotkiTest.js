@@ -1,7 +1,7 @@
 var assert = require('assert');
 var Sierotki = require('./../Sierotki.js').Sierotki;
 
-console.log(process.env.PWD,process.cwd())
+console.log(process.env,process.cwd())
 
 let string_1 = 'Zwykla sierota a sd :D sd<p ds> <a href="dsa dasd  s s">Zwykla sierota a sd :D sd</a><p>S sd</p><p>s sd</p>koniec ';
 
