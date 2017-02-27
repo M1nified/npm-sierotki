@@ -1,5 +1,5 @@
 {
-  "name": "sierotki.js",
+  "name": "sierotki",
   "version": "1.0.1",
   "description": "Removes single/double characters at the end of line.",
   "main": "index.js",
