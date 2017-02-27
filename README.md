@@ -17,7 +17,7 @@ var Sierotki = require('sierotki').Sierotki; // class Sierotki
 ## Browser
 
 ```html
-<script type="text/javascript" src="/node_modules/index.js"></script>
+<script type="text/javascript" src="/node_modules/sierotki/index.js"></script>
 <script type="text/javascript">
   let newText = Sierotki.orphansFix(some_text_to_be_fixed);
 </script>
