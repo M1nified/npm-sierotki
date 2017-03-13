@@ -1,6 +1,6 @@
 {
   "name": "sierotki",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Removes single/double characters at the end of line.",
   "main": "index.js",
   "directories": {

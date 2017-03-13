@@ -3,12 +3,12 @@ class Sierotki {
     static orphansFix(input) {
         if (!input)
             input = '';
-        let tags = [], brackets = /<[^>]*>/ig;
-        for (let tag; tag = brackets.exec(input); tags.push(tag))
+        let excluded = [], toBeExcluded = /(<script[^>]*>[^<]*<\/script>|<style[^>]*>[^<]*<\/style>|<[^>]*>)/ig;
+        for (let tag; tag = toBeExcluded.exec(input); excluded.push(tag))
             ;
         let index = 0;
         let output = "";
-        tags.forEach(tag => {
+        excluded.forEach(tag => {
             output += Sierotki.orphansFixSimple(input.slice(index, tag.index)) + tag[0];
             index = tag.index + tag[0].length;
         });

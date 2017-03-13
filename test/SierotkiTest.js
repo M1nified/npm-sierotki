@@ -45,6 +45,14 @@ describe('Sierotki', () => {
       assert.equal(Sierotki.orphansFix('</p>This is after the p.'),'</p>This is&nbsp;after the p.');
       assert.equal(Sierotki.orphansFix('This text is before the p<p>This is inside a p</p>This is after the p.'),'This text is&nbsp;before the p<p>This is&nbsp;inside a&nbsp;p</p>This is&nbsp;after the p.');
     });
+
+    it('should NOT change code between <style> tags', () => {
+      assert.equal(Sierotki.orphansFix('This is a style.<style>div > a { border: solid 1px #000; } </style>And this is after style.'), 'This is&nbsp;a&nbsp;style.<style>div > a { border: solid 1px #000; } </style>And this is&nbsp;after style.');
+    });
+
+    it('should NOT change code between <script> tags', () => {
+      assert.equal(Sierotki.orphansFix('This is a script.<script>let a = document.querySelector(" a > h3 ");</script>And this is after script.'), 'This is&nbsp;a&nbsp;script.<script>let a = document.querySelector(" a > h3 ");</script>And this is&nbsp;after script.');
+    });
       
   });
 

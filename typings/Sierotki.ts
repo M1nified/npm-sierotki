@@ -6,12 +6,12 @@ class Sierotki {
 
   static orphansFix(input: string): string {
     if (!input) input = '';
-    let tags: RegExpExecArray[] = [], brackets = /<[^>]*>/ig;
-    for (let tag: RegExpExecArray; tag = brackets.exec(input); tags.push(tag));
-    // console.log(tags);
+    let excluded: RegExpExecArray[] = [], toBeExcluded = /(<script[^>]*>[^<]*<\/script>|<style[^>]*>[^<]*<\/style>|<[^>]*>)/ig;
+    for (let tag: RegExpExecArray; tag = toBeExcluded.exec(input); excluded.push(tag));
+    // console.log(excluded);
     let index = 0;
     let output = "";
-    tags.forEach(tag => {
+    excluded.forEach(tag => {
       // console.log(tag);
       output += Sierotki.orphansFixSimple(input.slice(index, tag.index)) + tag[0];
       index = tag.index + tag[0].length;
