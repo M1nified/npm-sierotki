@@ -81,9 +81,13 @@ describe('Sierotki', () => {
       ');
     });
 
-    it('should work if style tag is contained by script tags', () => {
+    it('should work even if style tag is contained by script tags', () => {
       assert.equal(Sierotki.orphansFix('<script> let a = "<style> h1 { display: block; }; </style>"; </script>'),'<script> let a = "<style> h1 { display: block; }; </style>"; </script>')
     });
+
+    it('should work even if string contains multiple script|style blocks', () => {
+      assert.equal(Sierotki.orphansFix('A text before a script.<script> let script_close = "</script>"; </script> <script> let style = "<style> a { display: block; } </style>"; </script> A text after a script. <style> a { font-size: 14px; } </style> End of test.'),'A&nbsp;text before a&nbsp;script.<script> let script_close = "</script>"; </script> <script> let style = "<style> a { display: block; } </style>"; </script> A&nbsp;text after a&nbsp;script. <style> a { font-size: 14px; } </style> End of&nbsp;test.');
+    })
 
   });
 
