@@ -6,7 +6,7 @@ class Sierotki {
 
   static orphansFix(input: string): string {
     if (!input) input = '';
-    let excluded: RegExpExecArray[] = [], toBeExcluded = /(<script[^>]*>[^<]*<\/script>|<style[^>]*>[^<]*<\/style>|<[^>]*>)/ig;
+    let excluded: RegExpExecArray[] = [], toBeExcluded = /(<script[^>]*>((["'])(?:(?=(\\?))\4(.|\s))*?\3|<(?!\/script\>)|[^<])*<\/script>|<style[^>]*>[^<]*<\/style>|<[^>]*>)/ig;
     for (let tag: RegExpExecArray; tag = toBeExcluded.exec(input); excluded.push(tag));
     // console.log(excluded);
     let index = 0;

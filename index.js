@@ -3,7 +3,7 @@ class Sierotki {
     static orphansFix(input) {
         if (!input)
             input = '';
-        let excluded = [], toBeExcluded = /(<script[^>]*>[^<]*<\/script>|<style[^>]*>[^<]*<\/style>|<[^>]*>)/ig;
+        let excluded = [], toBeExcluded = /(<script[^>]*>((["'])(?:(?=(\\?))\4(.|\s))*?\3|<(?!\/script\>)|[^<])*<\/script>|<style[^>]*>[^<]*<\/style>|<[^>]*>)/ig;
         for (let tag; tag = toBeExcluded.exec(input); excluded.push(tag))
             ;
         let index = 0;
